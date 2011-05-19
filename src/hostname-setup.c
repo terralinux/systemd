@@ -32,9 +32,9 @@
 
 #if defined(TARGET_FEDORA) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MEEGO)
 #define FILENAME "/etc/sysconfig/network"
-#elif defined(TARGET_SUSE) || defined(TARGET_SLACKWARE) || defined(TARGET_FRUGALWARE)
+#elif defined(TARGET_SUSE) || defined(TARGET_SLACKWARE) || defined(TARGET_FRUGALWARE) || defined(TARGET_TERRA)
 #define FILENAME "/etc/HOSTNAME"
-#elif defined(TARGET_ARCH) || defined(TARGET_TERRA)
+#elif defined(TARGET_ARCH)
 #define FILENAME "/etc/rc.conf"
 #elif defined(TARGET_GENTOO)
 #define FILENAME "/etc/conf.d/hostname"
