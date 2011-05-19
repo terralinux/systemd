@@ -1,0 +1,5 @@
+[Meta]
+Description=System Logging Daemon
+
+[Service]
+ExecStart=/usr/bin/rsyslogd --foobar 'waldo'
