@@ -296,6 +296,7 @@ if test "z$with_distro" = "z"; then
                 test -f "/etc/mandriva-release" && with_distro="mandriva"
                 test -f "/etc/meego-release" && with_distro="meego"
                 test -f "/etc/angstrom-version" && with_distro="angstrom"
+                test -f "/etc/terra-release" && with_distro="terra"
                 if test "x`lsb_release -is 2>/dev/null`" = "xUbuntu"; then
                         with_distro="ubuntu"
                 fi
@@ -382,6 +383,12 @@ case $with_distro in
                 AC_DEFINE(TARGET_ANGSTROM, [], [Target is Ångström])
                 M4_DISTRO_FLAG=-DTARGET_ANGSTROM=1
                 ;;
+        terra)
+                SYSTEM_SYSVINIT_PATH=/etc/rc.d
+                SYSTEM_SYSVRCND_PATH=/etc
+                AC_DEFINE(TARGET_TERRA, [], [Target is Terralinux])
+                M4_DISTRO_FLAG=-DTARGET_TERRA=1
+                ;;
         other)
                 ;;
         *)
@@ -433,6 +440,7 @@ AM_CONDITIONAL(TARGET_ALTLINUX, test x"$with_distro" = xaltlinux)
 AM_CONDITIONAL(TARGET_MANDRIVA, test x"$with_distro" = xmandriva)
 AM_CONDITIONAL(TARGET_MEEGO, test x"$with_distro" = xmeego)
 AM_CONDITIONAL(TARGET_ANGSTROM, test x"$with_distro" = xangstrom)
+AM_CONDITIONAL(TARGET_TERRA, test x"$with_distro" = xterra)
 
 AM_CONDITIONAL(HAVE_PLYMOUTH, test -n "$have_plymouth")
 AM_CONDITIONAL(HAVE_SYSV_COMPAT, test "$SYSTEM_SYSV_COMPAT" = "yes")
