@@ -32,7 +32,7 @@
 
 #if defined(TARGET_FEDORA) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MEEGO)
 #define FILENAME "/etc/sysconfig/network"
-#elif defined(TARGET_SUSE) || defined(TARGET_SLACKWARE) || defined(TARGET_FRUGALWARE) || defined(TARGET_TERRA)
+#elif defined(TARGET_SUSE) || defined(TARGET_SLACKWARE) || defined(TARGET_FRUGALWARE)
 #define FILENAME "/etc/HOSTNAME"
 #elif defined(TARGET_ARCH)
 #define FILENAME "/etc/rc.conf"
@@ -64,7 +64,7 @@ static int read_and_strip_hostname(const char *path, char **hn) {
 
 static int read_distro_hostname(char **hn) {
 
-#if defined(TARGET_FEDORA) || defined(TARGET_ARCH) || defined(TARGET_TERRA) || defined(TARGET_GENTOO) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MEEGO)
+#if defined(TARGET_FEDORA) || defined(TARGET_ARCH) || defined(TARGET_GENTOO) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MEEGO)
         int r;
         FILE *f;
 

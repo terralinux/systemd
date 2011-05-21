@@ -116,6 +116,8 @@ struct Socket {
         /* Socket options */
         bool keep_alive;
         bool free_bind;
+        bool transparent;
+        bool broadcast;
         int priority;
         int mark;
         size_t receive_buffer;
